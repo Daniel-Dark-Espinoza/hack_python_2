@@ -10,5 +10,16 @@ text: ["a","b"] output => ["2","1"]
 
 def fn_hack_8(s):
     result = s
-    #...
-    return result
+    lista = []
+    longitud = len(result)
+
+    if longitud % 2 == 0:
+        for i, elemento in enumerate(reversed(result), start=1):
+            lista.append(str(i))
+        lista.reverse()
+
+    else:
+        for i, elemento in enumerate(reversed(result), start=1):
+            lista.append(f"{elemento}-{longitud - i + 1}")
+
+    return lista
